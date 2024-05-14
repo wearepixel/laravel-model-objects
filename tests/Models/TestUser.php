@@ -3,13 +3,13 @@
 namespace Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use WeArePixel\LaravelModelObjects\HasLaravelModelObject;
+use WeArePixel\LaravelModelObjects\HasModelObject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class TestUser extends Model
 {
     use HasFactory;
-    use HasLaravelModelObject;
+    use HasModelObject;
 
     protected $guarded = [];
 

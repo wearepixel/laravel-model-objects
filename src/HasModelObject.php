@@ -2,7 +2,7 @@
 
 namespace WeArePixel\LaravelModelObjects;
 
-trait HasLaravelModelObject
+trait HasModelObject
 {
     private $encryptionEnabled;
 
@@ -36,6 +36,6 @@ trait HasLaravelModelObject
             unset($model[$hiddenProperty]);
         }
 
-        return !empty($this->modelObjectPrefix) ? $this->modelObjectPrefix.':'.json_encode($model) : json_encode($model);
+        return ! empty($this->modelObjectPrefix) ? $this->modelObjectPrefix . ':' . json_encode($model) : json_encode($model);
     }
 }
