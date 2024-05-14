@@ -15,7 +15,7 @@ class TestUser extends Model
 
     private $hiddenProperties = [];
 
-    protected $modelObjectPrefix = 'user';
+    protected $modelObjectPrefix;
 
     protected $table = 'test_users';
 
@@ -27,5 +27,10 @@ class TestUser extends Model
     public function setHiddenProperties($properties)
     {
         $this->hiddenProperties = $properties;
+    }
+
+    public function setModelObjectPrefix($prefix)
+    {
+        $this->modelObjectPrefix = $prefix;
     }
 }
