@@ -36,7 +36,5 @@ it('shows the primary key if configured to do so', function () {
         'date_of_birth' => '1992-01-01',
     ]);
 
-    dd($user->modelObject);
-
     expect($user->modelObject)->toBe('{"name":"John Doe","email":"john@doe.com","password":"password","date_of_birth":"1992-01-01","id":1}');
 });
