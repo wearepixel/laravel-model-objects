@@ -28,11 +28,11 @@ composer require wearepixel/laravel-model-objects
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use WeArePixel\LaravelModelObjects\HasLaravelModelObject;
+use WeArePixel\LaravelModelObjects\HasModelObject;
 
 class User extends Model
 {
-    use HasLaravelModelObject;
+    use HasModelObject;
 
     protected $hiddenProperties = [
         'user_id',

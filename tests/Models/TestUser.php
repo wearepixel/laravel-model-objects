@@ -15,6 +15,8 @@ class TestUser extends Model
 
     private $hiddenProperties = [];
 
+    protected $modelObjectPrefix;
+
     protected $table = 'test_users';
 
     protected $encryptableAttributes = [
@@ -25,5 +27,10 @@ class TestUser extends Model
     public function setHiddenProperties($properties)
     {
         $this->hiddenProperties = $properties;
+    }
+
+    public function setModelObjectPrefix($prefix)
+    {
+        $this->modelObjectPrefix = $prefix;
     }
 }

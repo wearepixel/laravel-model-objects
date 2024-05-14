@@ -26,7 +26,7 @@ it('hides additional fields if configured', function () {
     expect($user->modelObject)->toBe('{"name":"John Doe","email":"john@doe.com","date_of_birth":"1992-01-01"}');
 });
 
-it('shows the primary key if configured to do so', function () {
+it('check model object prefix', function () {
     config(['laravel-model-objects.hide_primary_key' => false]);
 
     $user = TestUser::create([
@@ -36,7 +36,20 @@ it('shows the primary key if configured to do so', function () {
         'date_of_birth' => '1992-01-01',
     ]);
 
-    dd($user->modelObject);
+    $user->setModelObjectPrefix('user');
+
+    expect($user->modelObject)->toBe('user:{"name":"John Doe","email":"john@doe.com","password":"password","date_of_birth":"1992-01-01","id":1}');
+});
+
+it('shows the primary key if configured to do so', function () {
+    config(['laravel-model-objects.hide_primary_key' => false]);
+
+    $user = TestUser::create([
+        'name' => 'John Doe',
+        'email' => 'john@doe.com',
+        'password' => 'password',
+        'date_of_birth' => '1992-01-01',
+    ]);
 
     expect($user->modelObject)->toBe('{"name":"John Doe","email":"john@doe.com","password":"password","date_of_birth":"1992-01-01","id":1}');
 });
